@@ -12,7 +12,6 @@ int digit(int num){
     return dig;
 }
 
-
 bool is_palindrome(int arr[], int size){
     int mid = size/2;
     for (int i=0;i<mid;i++){ //4-> mid=2 0 1 3 2
@@ -22,7 +21,6 @@ bool is_palindrome(int arr[], int size){
     }
     return true;
 }
-
 
 int main(){
     int n;
