@@ -3,11 +3,11 @@ using namespace std;
 
 void copy_string(char* src, char* dest) {
   int size = 0;
-  while(*(src+size)!=0){
+  while (*(src + size) != 0) {
     size++;
   }
-  for(int i=0;i<=size;i++){
-    *(dest+i) = src[i];
+  for (int i = 0; i <= size; i++) {
+    *(dest + i) = src[i];
   }
 }
 
@@ -20,4 +20,3 @@ int main() {
 
   cout << st2 << endl;
 }
-
