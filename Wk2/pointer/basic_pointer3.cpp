@@ -1,18 +1,15 @@
 #include <iostream>
 using namespace std;
 
-void dosomething(int *a) {
-    int arr[100];
-    // int *temp = arr;
-    //  *a = *temp;
-    
+void dosomething(int** p) {
+    *p = new int[100];
     }
 
 int main() {
     int* x = 0;
     cout << x;
 
-    dosomething(x);
+    dosomething(&x);
     for (int i = 0; i < 100; i++) {
       x[i] = i * 2;
     }
