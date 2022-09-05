@@ -42,6 +42,10 @@ int main() {
   for (int time = 0; time < testcase; time++) {
     string blankline;
     getline(cin, blankline);
+    if(time>0){
+      cout << endl;
+    }
+
     int n, m;
     cin >> n >> m;
     string word_arr[m];
@@ -50,7 +54,6 @@ int main() {
       cin >> word;
       word_arr[i] = word;
     }
-    cout << endl;
 
     int word_sort[m];
     for (int i = 0; i < m; i++) {
@@ -81,9 +84,7 @@ int main() {
     for (int i = 0; i < m; i++) {
       cout << word_arr[i] << endl;
     }
-    if (time != testcase - 1) {
-      cout << endl;
-    }
+
   }
 }
 
