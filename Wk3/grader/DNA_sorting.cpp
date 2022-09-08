@@ -14,27 +14,6 @@ int count_sort(string word, int size) {
   }
   return count;
 }
-//! must use pointer to do with function
-// void sorting(string word_arr[], int word_sort[], int size){
-//  // do a bubble sort at here
-//   bool changed = false;
-//   while(not changed){
-//     changed = false;
-//     for(int i=0;i<size-1;i++){
-//       if (word_sort[i] > word_sort[i+1]){
-//         int temp = word_sort[i];
-//         word_sort[i] = word_sort[i+1];
-//         word_sort[i+1] = temp;
-
-//         string str_temp = word_arr[i];
-//         word_arr[i] = word_arr[i+1];
-//         word_arr[i+1] = str_temp;
-
-//         changed = true;
-//       }
-//     }
-//   }
-// }
 
 int main() {
   int testcase;
@@ -87,6 +66,30 @@ int main() {
 
   }
 }
+
+//! must use pointer to do with function
+// void sorting(string word_arr[], int word_sort[], int size){
+//  // do a bubble sort at here
+//   bool changed = false;
+//   while(not changed){
+//     changed = false;
+//     for(int i=0;i<size-1;i++){
+//       if (word_sort[i] > word_sort[i+1]){
+//         int temp = word_sort[i];
+//         word_sort[i] = word_sort[i+1];
+//         word_sort[i+1] = temp;
+
+//         string str_temp = word_arr[i];
+//         word_arr[i] = word_arr[i+1];
+//         word_arr[i+1] = str_temp;
+
+//         changed = true;
+//       }
+//     }
+//   }
+// }
+
+
 
 /*
 10 6
