@@ -4,9 +4,11 @@ using namespace std;
 struct Node {
   int val;
   Node* next;
-  Node(int value, Node* next_node = NULL) {
+  Node* prev;
+  Node(int value, Node* next_node = NULL, Node* prev_node = NULL) {
     val = value;
     next = next_node;
+    prev = prev_node;
   }
 };
 
@@ -26,11 +28,21 @@ Node* init_card(int size) {
     int x;
     cin >> x;
     Node* new_node = new Node(x);
+    if (header != NULL) {
+      new_node->prev = header;
+    }
     header->next = new_node;
     header = header->next;
   }
-  header->next = temp->next;
-  header = header->next;
+
+  Node* prev = header;
+    // cout << header->val << "  " << header->prev->val << endl;
+  header = temp->next;
+  // cout << header->val << "  " << endl;
+  if (header != NULL) {
+    header->prev = prev;
+    prev->next = header;
+  }
   return header;
 }
 
@@ -52,17 +64,23 @@ int main() {
       }
       now = now->next;
     }
-    //! I thinks its slow here
-    if (count==0){
-      Node* target = now;
-      now = now->next;
-      while(now->next!=target){
-        now = now->next;
-      }
+
+    if (count == 0) {
+      // Node* target = now;
+      // now = now->next;
+      // while(now->next!=target){
+      //   now = now->next;
+      // }
+      now = now->prev;
     }
-    //! need to pointer to the prev position
+        // print_list(header, n);
+        // cout << now->val << "   " << now->next->val << "   " << now->prev->val<< endl;
+        // cout << now->next->val << "   " << (now->next->next)<< "   " << now->next->prev->val<< endl;
     Node* temp = now->next;
     now->next = temp->next;
+    now->next->prev = temp->prev;
+
+
     // cout << temp->val << endl;
     if (temp == header) {
       header = header->next;
