@@ -45,15 +45,33 @@ int main() {
     } else {
       // *****************************
       // buffer is an operator.
-      switch (buffer)
-      {
-      case "+":
-      
-        break;
-      
-      default:
-        break;
+      ValueType val_1, val_2, result;
+      switch (buffer.at(0)) {
+        case '+':
+          val_1 = pop(head);
+          val_2 = pop(head);
+          result = val_1 + val_2;
+          break;
+        case '-':
+          val_1 = pop(head);
+          val_2 = pop(head);
+          result = val_2 - val_1;
+          break;
+        case '*':
+          val_1 = pop(head);
+          val_2 = pop(head);
+          result = val_1 * val_2;
+          break;
+        case '/':
+          val_1 = pop(head);
+          val_2 = pop(head);
+          result = val_2 / val_1;
+          break;
+
+        default:
+          break;
       }
+      push(head, result);
     }
   } while (true);
   cout << fixed << setprecision(4) << head->val << endl;
