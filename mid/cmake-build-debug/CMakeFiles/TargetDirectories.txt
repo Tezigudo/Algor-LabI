@@ -1,2 +1,0 @@
-/Users/god/Desktop/MyFolder/Programming/Y2S1/Algor/mid/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/god/Desktop/MyFolder/Programming/Y2S1/Algor/mid/cmake-build-debug/CMakeFiles/rebuild_cache.dir
