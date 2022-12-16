@@ -62,7 +62,7 @@ int main() {
         topo_order();
 
         for (int i = 0; i < n; i++) {
-            if (i != n - 1){
+            if (i != n - 1) {
                 cout << output[i] + 1 << ' ';
             } else {
                 cout << output[i] + 1 << endl;

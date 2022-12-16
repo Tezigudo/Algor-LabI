@@ -4,9 +4,7 @@
 #include <vector>
 using namespace std;
 
-bool bipartite_test() {
-    int n, m;
-    cin >> n >> m;
+bool bipartite_test(int n, int m) {
     vector<int> adj[n];
     bool seen[n];
     int color[n];
@@ -20,8 +18,6 @@ bool bipartite_test() {
     for (int i = 0; i < m; i++) {
         int u, v;
         cin >> u >> v;
-        u--;
-        v--;
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
@@ -37,14 +33,14 @@ bool bipartite_test() {
         q.pop();
         int current_color = color[u];
         for (int node : adj[u]) {
-            if (seen[node] && color[node] == current_color) {
-                return false;
-            }
             if (!seen[node]) {
                 seen[node] = true;
                 color[node] = 1 - current_color;
 
                 q.push(node);
+            }
+            if (seen[node] && color[node] == current_color) {
+                return false;
             }
         }
     }
@@ -52,10 +48,10 @@ bool bipartite_test() {
 }
 
 int main() {
-    int k;
-    cin >> k;
-    while (k--) {
-        cout << (bipartite_test() ? "yes" : "no") << endl;
+    int n, m;
+    while (cin >> n && n != 0) {
+        cin >> m;
+        cout << (bipartite_test(n, m) ? "" : "NOT ") << "BICOLORABLE." << endl;
     }
     return 0;
 }

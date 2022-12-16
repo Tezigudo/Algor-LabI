@@ -13,7 +13,6 @@ int n, m;
 vector<int> output;
 
 void read_input(int n, int m) {
-
     for (int i = 0; i < n; i++) {
         indeg[i] = outdeg[i] = 0;
         adj[i].clear();
@@ -66,5 +65,5 @@ int main() {
         }
         cout << endl;
     }
-
 }
+
